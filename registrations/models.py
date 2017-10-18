@@ -20,8 +20,9 @@ class Alumni(models.Model):
 		('F', 'Female'),
 	)
 	user = models.OneToOneField(User, null=True, blank=True)
-	fname = models.CharField("First Name", max_length=200),
-	lname = models.CharField("Last Name", max_length=200),
+	name = models.CharField("Name", max_length=200)
+	fname = models.CharField("First Name", max_length=200)
+	lname = models.CharField("Last Name", max_length=200)
 	phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
 	phone_number = models.CharField(max_length=200, validators=[phone_regex])
 	# email_regex = RegexValidator(regex=r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", message="Invalid Email Format")
