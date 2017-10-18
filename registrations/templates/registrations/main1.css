@@ -1,0 +1,94 @@
+.footer, .push {
+  position: absolute;
+  right: 0;
+  height: auto;
+  margin-top: 10%;
+  left: 0;
+
+  background-color: #efefef;
+  text-align: left;
+  padding: 35px;
+}
+.float-right{
+  float: right;
+}
+
+#footer-logo{
+  max-width: 70%;
+  max-height: auto;
+  min-width: 70px;
+  min-height: 50px;
+  padding-right: 0px;
+}
+#header{
+    background-color: #efefef;
+}
+#navbar{
+    background-color: #efefef;
+}
+
+
+#logo{
+  max-width: 450px;
+  max-height: auto;
+  min-width: 200px;
+  padding-right: 0px;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto ;
+    height: 100%;
+    margin: 0 auto -75px; /* the bottom margin is the negative value of the footer's height */
+}
+
+
+
+[role="contents"] {
+    position:relative;
+}
+.mega-nav {
+    background:#edf2f2;
+    border-radius:0;
+    margin-bottom:0;
+}
+.mega-nav.navbar-default .navbar-nav > li > a {
+    color:#0a0a5d;
+    transition: all 200ms ease-out;
+    -webkit-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+}
+.mega-nav.navbar-default .navbar-nav > li > a:hover {
+    background:#0a0a5d;
+    color:#fff;
+}
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:hover,
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:focus,
+.mega-nav.navbar-default .navbar-nav > li.dropdown > a:active{
+    background:#0a0a5d;
+    color:#fff;
+}
+#MainMenu {
+    padding-left:0;
+}
+#MainMenu .menu-list li {
+    transition: all 200ms ease-out;
+    -webkit-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+}
+#MainMenu .menu-list li + li {
+    border-left:1px solid rgba(255, 255, 255, 0);
+}
+
+.mega-nav.navbar-default .navbar-nav > li.menu-list .list-category a {
+    color:#333;
+}
+.darkness {
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
