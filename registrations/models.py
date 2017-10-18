@@ -5,12 +5,20 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.utils import timezone
 
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 from datetime import datetime as dt
 
 
 class Alumni(models.Model):
+	GENDERS = (
+		('M', 'Male'),
+		('F', 'Female'),
+		# ('G', 'God')
+	)
+	user = models.OneToOneField(User, null=True, blank=True)
 	fname = models.CharField("First Name", max_length=200, null=False, blank=False),
 	lname = models.CharField("Last Name", max_length=200, null=False, blank=False),
 	phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
