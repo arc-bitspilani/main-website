@@ -2,6 +2,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core.validators import RegexValidator
+from django.utils import timezone
 
 # Create your models here.
 
@@ -15,5 +17,5 @@ class Alumni(models.Model):
 	phone_number = models.CharField(max_length=200, validators=[phone_regex], null=False, blank=False)
 	email_regex = RegexValidator(regex=r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", message="Invalid Email Format")
 	email = models.CharField(max_length=200 ,validators=[email_regex], null=False, blank=False)
-	gender = models.CharField("Gender" max_length=10, null=False, blank=False)
+	gender = models.CharField("Gender", max_length=10, null=False, blank=False)
 	dob = models.DateField("Date of Birth")
