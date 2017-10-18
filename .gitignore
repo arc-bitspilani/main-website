@@ -100,5 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 db.sqlite3
-registration/migrations/*
+registrations/migrations/*
 bac/secret.py
+registrations/migrations/0001_initial.py
