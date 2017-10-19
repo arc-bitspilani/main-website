@@ -45,3 +45,7 @@ class Alumni(models.Model):
 	w_region = models.CharField("Work State/Province/Region", max_length=200)
 	w_postcode = models.BigIntegerField(default=0)
 	w_country = models.CharField("Work Country", max_length=200)
+
+	class Meta:
+		verbose_name = "Alumni"
+		verbose_name_plural = "Alumni"
