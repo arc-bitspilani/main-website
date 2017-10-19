@@ -43,4 +43,5 @@ class Alumni(models.Model):
 	position = models.CharField("Position", max_length=200)
 	w_addrl1 = models.CharField("Work Address Line 1", max_length=200)
 	w_addrl2 = models.CharField("Work Address Line 2", max_length=200)
-	
+	w_city = models.CharField("Work City", max_length=200)
+	w_country = models.CharField("Work Country", max_length=200)

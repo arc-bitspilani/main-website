@@ -29,7 +29,7 @@ def alumni_register(request):
 		addrl1 = pst['address-line1'].strip()
 		addrl2 = pst['address-line2'].strip()
 		state = pst['region'].strip()
-		postcode = int(pst['postal-code'])
+		postcode = int(pst['postalcode'])
 		country = pst['country']
 
 		registered_alumni = Alumni.objects.all()
