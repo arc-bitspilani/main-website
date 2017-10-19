@@ -49,3 +49,6 @@ class Alumni(models.Model):
 	class Meta:
 		verbose_name = "Alumni"
 		verbose_name_plural = "Alumni"
+
+	def __str__(self):
+		return self.name
