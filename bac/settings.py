@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'bac.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'registrations',
+        'NAME': 'alumni',
         'USER': datadb.MYSQL_USER,
         'PASSWORD': datadb.MYSQL_PASS,
         'HOST':'localhost',

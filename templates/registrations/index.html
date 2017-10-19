@@ -152,8 +152,8 @@
                     <h3 class="fs-subtitle">Tell us something about you</h3>
                     <input type="text" name="fname" class="form-control" placeholder="First Name"/>
                     <input type="text" name="lname" class="form-control" placeholder="Last Name"/>
-                    <input type="text" name="phone" class="form-control" placeholder="Phone"/>
-                    <input type="text" name="Email" class="form-control" placeholder="Email"/>
+                    <input type="text" name="phone_no" class="form-control" placeholder="Phone"/>
+                    <input type="text" name="email_id" class="form-control" placeholder="Email"/>
                     <select class="form-control" placeholder="Gender">
                                               <option>Gender</option>
                                               <option>Male</option>
@@ -161,15 +161,16 @@
                                           </select>
                                             <br>
                                           <div class="well">Date of Birth
-                                            <input type="date" class="form-control" name="bday">
+                                            <input type="date" class="form-control" name="dob">
                                           </div>
 
 
 
 
                                     <!-- Address form -->
-
-                                    <h2>Address</h2>
+                                    <br>
+                                    <h2 class="fs-title">Address</h2>
+                                    <h3 class="fs-subtitle">Your Current Resident Details</h3>
 
 
 
@@ -177,7 +178,7 @@
                                     <div class="control-group">
 
                                         <div class="controls">
-                                            <input id="address-line1" name="address-line1" type="text" class="form-control" placeholder="address line 1"
+                                            <input id="address-line1" name="address-line1" type="text" class="form-control" placeholder="Address Line 1"
                                             class="input-xlarge">
 
                                         </div>
@@ -186,7 +187,7 @@
                                     <div class="control-group">
 
                                         <div class="controls">
-                                            <input id="address-line2" name="address-line2" type="text" class="form-control" placeholder="address line 2"
+                                            <input id="address-line2" name="address-line2" type="text" class="form-control" placeholder="Address Line 2"
                                             class="input-xlarge">
 
                                         </div>
@@ -195,7 +196,7 @@
                                     <div class="control-group">
 
                                         <div class="controls">
-                                            <input id="city" name="city" type="text" placeholder="city" class="form-control" class="input-xlarge">
+                                            <input id="city" name="city" type="text" placeholder="City" class="form-control" class="input-xlarge">
                                             <p class="help-block"></p>
                                         </div>
                                     </div>
@@ -203,7 +204,7 @@
                                     <div class="control-group">
 
                                         <div class="controls">
-                                            <input id="region" name="region" type="text" class="form-control" placeholder="state / province / region"
+                                            <input id="region" name="region" type="text" class="form-control" placeholder="State / Province / Region"
                                             class="input-xlarge">
                                             <p class="help-block"></p>
                                         </div>
@@ -212,7 +213,7 @@
                                     <div class="control-group">
 
                                         <div class="controls">
-                                            <input id="postal-code" name="postal-code" type="text" class="form-control" placeholder="zip or postal code"
+                                            <input id="postal-code" name="postal-code" type="text" class="form-control" placeholder="Zip / Postal Code"
                                             class="input-xlarge">
                                             <p class="help-block"></p>
                                         </div>
@@ -222,7 +223,7 @@
 
                                         <div class="controls">
                                             <select id="country" name="country" class="form-control">
-                                                <option value="" selected="selected">(please select a country)</option>
+                                                <option value="" selected="selected">Select Your Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
                                                 <option value="DZ">Algeria</option>
@@ -485,9 +486,9 @@
                 <fieldset>
                     <h2 class="fs-title">Work Details</h2>
                     <h3 class="fs-subtitle">Fill in your credentials</h3>
-                    <input type="text" name="organisation" placeholder="Organisation"/>
-                    <input type="text" name="position" placeholder="Position"/>
-                    <h2>Address</h2>
+                    <input type="text" name="organisation" class="form-control" placeholder="Organisation"/>
+                    <input type="text" name="position" class="form-control" placeholder="Position"/>
+                    <h2 class="fs-title">Address</h2>
 
 
 
@@ -495,7 +496,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                            <input id="address-line1" name="address-line1" class="form-control" type="text" placeholder="Address Line 1"
                             class="input-xlarge">
 
                         </div>
@@ -504,7 +505,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                            <input id="address-line2" name="address-line2" class="form-control" type="text" placeholder="Address Line 2"
                             class="input-xlarge">
 
                         </div>
@@ -513,7 +514,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                            <input id="city" name="city" type="text" class="form-control" placeholder="City" class="input-xlarge">
                             <p class="help-block"></p>
                         </div>
                     </div>
@@ -521,7 +522,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <input id="region" name="region" type="text" placeholder="state / province / region"
+                            <input id="region" name="region" type="text" class="form-control" placeholder="State / Province / Region"
                             class="input-xlarge">
                             <p class="help-block"></p>
                         </div>
@@ -530,7 +531,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                            <input id="postal-code" name="postal-code" class="form-control" type="text" placeholder="Zip / Postal code"
                             class="input-xlarge">
                             <p class="help-block"></p>
                         </div>
@@ -539,8 +540,8 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <select id="country" name="country" class="input-xlarge">
-                                <option value="" selected="selected">(please select a country)</option>
+                            <select id="country" name="country" class="form-control" class="input-xlarge">
+                                <option value="" selected="selected">Select Your Country</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AL">Albania</option>
                                 <option value="DZ">Algeria</option>
