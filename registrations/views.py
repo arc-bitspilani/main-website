@@ -10,10 +10,7 @@ from datetime import datetime as dt
 # Create your views here.
 
 def index(request):
-
-	 	return render(request,'../templates/registrations/index.html')
-
-	return HttpResponse("Index")
+	return render(request, './registrations/index.html')
 
 def alumni_register(request):
 	if request.POST:
