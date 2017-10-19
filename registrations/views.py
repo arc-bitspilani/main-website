@@ -32,6 +32,17 @@ def alumni_register(request):
 		postcode = int(pst['postalcode'])
 		country = pst['country']
 
+		# Work details
+		organisation = pst['organisation']
+		position = pst['position']
+		w_addrl1 = pst['w_address-line1']
+		w_addrl2 = pst['w_address-line2']
+		w_city = pst['w_city']
+		w_region = pst['w_region']
+		w_postcode = int(pst['w_postcode'])
+		w_country = pst['w_country']
+
+
 		registered_alumni = Alumni.objects.all()
 		list_of_registered_emails = [x.email_id for x in registered_alumni]
 
@@ -49,3 +60,12 @@ def alumni_register(request):
 			alumni.state = state
 			alumni.postcode = postcode
 			alumni.country = country
+
+			alumni.organisation = organisation
+			alumni.position = position
+			alumni.w_addrl1 = w_addrl1
+			alumni.w_addrl2 = w_addrl2
+			alumni.w_city = w_city
+			alumni.w_postcode = w_postcode
+			alumni.w_country = w_country
+			

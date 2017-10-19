@@ -42,4 +42,6 @@ class Alumni(models.Model):
 	w_addrl1 = models.CharField("Work Address Line 1", max_length=200)
 	w_addrl2 = models.CharField("Work Address Line 2", max_length=200)
 	w_city = models.CharField("Work City", max_length=200)
+	w_region = models.CharField("Work State/Province/Region", max_length=200)
+	w_postcode = models.BigIntegerField(default=0)
 	w_country = models.CharField("Work Country", max_length=200)
