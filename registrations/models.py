@@ -39,4 +39,8 @@ class Alumni(models.Model):
 	verified = models.NullBooleanField(default=False)
 
 	# Work Details
+	organisation = models.CharField("Organisation", max_length=200)
+	position = models.CharField("Position", max_length=200)
+	w_addrl1 = models.CharField("Work Address Line 1", max_length=200)
+	w_addrl2 = models.CharField("Work Address Line 2", max_length=200)
 	
