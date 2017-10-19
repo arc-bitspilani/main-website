@@ -37,3 +37,6 @@ class Alumni(models.Model):
 	country = models.CharField("Country", max_length=5)
 
 	verified = models.NullBooleanField(default=False)
+
+	# Work Details
+	
