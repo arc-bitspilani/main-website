@@ -12,7 +12,8 @@ from datetime import datetime as dt
 def index(request):
 	return render(request, './registrations/index.html')
 
-def alumni_register(request):
+def alumni_register(request, pk):
+	post
 	if request.POST:
 		print request.POST
 		pst = request.POST
