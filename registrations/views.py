@@ -17,6 +17,8 @@ def alumni_register(request, pk):
 	if request.POST:
 		print request.POST
 		pst = request.POST
+
+		# Personal Details
 		name = pst['fname'].strip() + " " + pst['lname'].strip()
 		gender = pst['gender']
 		if gender == "Male":
@@ -33,6 +35,14 @@ def alumni_register(request, pk):
 		postcode = int(pst['postalcode'])
 		country = pst['country']
 
+		# Education Details
+		branch = pst['branch']
+		stream1 = pst['stream1']
+		stream2 = pst['stream2']
+		id_no = pst['id_no']
+		adm_year = int(pst['adm_year'])
+		grad_year = int(pst['grad_year'])
+
 		# Work details
 		organisation = pst['organisation']
 		position = pst['position']
@@ -43,6 +53,15 @@ def alumni_register(request, pk):
 		w_postcode = int(pst['w_postcode'])
 		w_country = pst['w_country']
 
+		# Previous Work Details
+		p_organisation = pst['p_organisation']
+		p_position = pst['p_position']
+		p_w_addrl1 = pst['p_address-line1']
+		p_w_addrl2 = pst['p_address-line2']
+		p_w_city = pst['p_w_city']
+		p_w_region = pst['p_w_region']
+		p_w_postcode = pst['p_w_postcode']
+		p_w_country = pst['p_w_country']
 
 		registered_alumni = Alumni.objects.all()
 		list_of_registered_emails = [x.email_id for x in registered_alumni]
@@ -51,6 +70,7 @@ def alumni_register(request, pk):
 			return render(request, 'register.html', {'status':0, 'message':"This email is already registered. Please try again."})
 		else:
 			alumni = Alumni()
+
 			alumni.name = name
 			alumni.gender = gender
 			alumni.phone_no = phone_no
@@ -62,6 +82,13 @@ def alumni_register(request, pk):
 			alumni.postcode = postcode
 			alumni.country = country
 
+			alumni.branch = branch
+			alumni.stream1 = stream1
+			alumni.stream2 = stream2
+			alumni.id_no = id_no
+			alumni.adm_year = adm_year
+			alumni.grad_year = grad_year
+
 			alumni.organisation = organisation
 			alumni.position = position
 			alumni.w_addrl1 = w_addrl1
@@ -70,3 +97,13 @@ def alumni_register(request, pk):
 			alumni.w_postcode = w_postcode
 			alumni.w_country = w_country
 			
+			alumni.p_organisation = p_organisation
+			alumni.p_position = p_position
+			alumni.p_w_addrl1 = p_w_addrl1
+			alumni.p_w_addrl2 = p_w_addrl2
+			alumni.p_w_city = p_w_city
+			alumni.p_w_region = p_w_region
+			alumni.p_w_postcode = p_w_postcode
+			alumni.p_w_country = p_w_country
+
+			alumni.save()
