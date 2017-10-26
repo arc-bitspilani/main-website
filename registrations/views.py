@@ -6,14 +6,15 @@ from django.http import HttpResponse
 from django.template import Context, loader
 
 from datetime import datetime as dt
+from .models import *
 
 # Create your views here.
 
 def index(request):
-	return render(request, './registrations/index.html')
+	return render(request, './registrations/register.html')
 
-def alumni_register(request, pk):
-	post
+def alumni_register(request):
+	
 	if request.POST:
 		print request.POST
 		pst = request.POST
@@ -32,11 +33,12 @@ def alumni_register(request, pk):
 		addrl1 = pst['address-line1'].strip()
 		addrl2 = pst['address-line2'].strip()
 		state = pst['region'].strip()
+		city = pst['city'].strip()
 		postcode = int(pst['postalcode'])
 		country = pst['country']
 
 		# Education Details
-		branch = pst['branch']
+		degree = pst['degree']
 		stream1 = pst['stream1']
 		stream2 = pst['stream2']
 		id_no = pst['id_no']
@@ -50,24 +52,24 @@ def alumni_register(request, pk):
 		w_addrl2 = pst['w_address-line2']
 		w_city = pst['w_city']
 		w_region = pst['w_region']
-		w_postcode = int(pst['w_postcode'])
+		w_postcode = int(pst['w_postalcode'])
 		w_country = pst['w_country']
 
 		# Previous Work Details
-		p_organisation = pst['p_organisation']
-		p_position = pst['p_position']
-		p_w_addrl1 = pst['p_address-line1']
-		p_w_addrl2 = pst['p_address-line2']
-		p_w_city = pst['p_w_city']
-		p_w_region = pst['p_w_region']
-		p_w_postcode = pst['p_w_postcode']
-		p_w_country = pst['p_w_country']
+		# p_organisation = pst['p_organisation']
+		# p_position = pst['p_position']
+		# p_w_addrl1 = pst['p_address-line1']
+		# p_w_addrl2 = pst['p_address-line2']
+		# p_w_city = pst['p_w_city']
+		# p_w_region = pst['p_w_region']
+		# p_w_postcode = pst['p_w_postalcode']
+		# p_w_country = pst['p_w_country']
 
 		registered_alumni = Alumni.objects.all()
 		list_of_registered_emails = [x.email_id for x in registered_alumni]
 
 		if email_id in list_of_registered_emails:
-			return render(request, 'register.html', {'status':0, 'message':"This email is already registered. Please try again."})
+			return render(request, 'registrations/register.html', {'status':0, 'message':"This email is already registered. Please try again."})
 		else:
 			alumni = Alumni()
 
@@ -79,10 +81,11 @@ def alumni_register(request, pk):
 			alumni.addrl1 = addrl1
 			alumni.addrl2 = addrl2
 			alumni.state = state
+			alumni.city = city
 			alumni.postcode = postcode
 			alumni.country = country
 
-			alumni.branch = branch
+			alumni.degree = degree
 			alumni.stream1 = stream1
 			alumni.stream2 = stream2
 			alumni.id_no = id_no
@@ -94,16 +97,18 @@ def alumni_register(request, pk):
 			alumni.w_addrl1 = w_addrl1
 			alumni.w_addrl2 = w_addrl2
 			alumni.w_city = w_city
+			alumni.w_region = w_region
 			alumni.w_postcode = w_postcode
 			alumni.w_country = w_country
 			
-			alumni.p_organisation = p_organisation
-			alumni.p_position = p_position
-			alumni.p_w_addrl1 = p_w_addrl1
-			alumni.p_w_addrl2 = p_w_addrl2
-			alumni.p_w_city = p_w_city
-			alumni.p_w_region = p_w_region
-			alumni.p_w_postcode = p_w_postcode
-			alumni.p_w_country = p_w_country
+			# alumni.p_organisation = p_organisation
+			# alumni.p_position = p_position
+			# alumni.p_w_addrl1 = p_w_addrl1
+			# alumni.p_w_addrl2 = p_w_addrl2
+			# alumni.p_w_city = p_w_city
+			# alumni.p_w_region = p_w_region
+			# alumni.p_w_postcode = p_w_postcode
+			# alumni.p_w_country = p_w_country
 
 			alumni.save()
+	return render(request, 'registrations/register.html')

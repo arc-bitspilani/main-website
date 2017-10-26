@@ -6,7 +6,8 @@
   <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form id="msform" name="form_details" >
+            <form action="{% url 'registrations:index' %}" id="msform" name="form_details" method="POST" >
+                {% csrf_token %}
                 <!-- progressbar -->
                 <ul id="progressbar">
                     <li class="active">Personal Details</li>
@@ -21,7 +22,7 @@
                     <input type="text" name="lname" class="form-control" placeholder="Last Name"/>
                     <input type="text" name="phone_no" class="form-control" placeholder="Phone"/>
                     <input type="text" name="email_id" class="form-control" placeholder="Email"/>
-                    <select class="form-control">
+                    <select class="form-control" name="gender">
                                               <option disabled selected hidden>Gender</option>
                                               <option>Male</option>
                                               <option>Female</option>
@@ -343,7 +344,7 @@
                     <div class="control-group">
 
                         <div class="controls">
-                            <select id="country" name="branch" class="form-control" class="input-xlarge" placeholder="Degree">
+                            <select id="country" name="degree" class="form-control" class="input-xlarge" placeholder="Degree">
                                 <option value="" disabled selected hidden>Degree</option>
                                 <option value="SD">B.E. Single Degree</option>
                                 <option value="DD">B.E. Dual Degree</option>
@@ -357,8 +358,8 @@
                     <input type="text" name="stream1" class="form-control" placeholder="Stream 1"/>
                     <input type="text" name="stream2" class="form-control" placeholder="Stream 2 (If Dual Degree)"/>
                     <input type="text" name="id_no" class="form-control" placeholder="ID Number"/>
-                    <input type="number" name="admission_year" class="form-control" placeholder="Admission Year"/>
-                    <input type="number" name="graduation_year" class="form-control" placeholder="Graduation Year"/>
+                    <input type="number" name="adm_year" class="form-control" placeholder="Admission Year"/>
+                    <input type="number" name="grad_year" class="form-control" placeholder="Graduation Year"/>
                     <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                     <input type="button" name="next" class="next action-button" value="Next"/>
                 </fieldset>
@@ -772,10 +773,16 @@
             easing: 'easeInOutBack'
         });
     });
+    $('form').bind("keypress", function(e) {
+        if (e.keyCode == 13) {               
+            e.preventDefault();
+            return false;
+        }
+    });
 
-    $(".submit").click(function(){
-        return false;
-    })
+    // $(".submit").click(function(){
+    //     // return false;
+    // })
 
 
     </script>

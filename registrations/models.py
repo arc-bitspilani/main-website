@@ -37,7 +37,7 @@ class Alumni(models.Model):
 	verified = models.NullBooleanField(default=False)
 
 	# Education Details
-	branch = models.CharField("Branch", max_length=50)
+	degree = models.CharField("Degree", max_length=50)
 	stream1 = models.CharField("Stream 1", max_length=100)
 	stream2 = models.CharField("Stream 2", max_length=100, null=True, blank=True)
 	id_no = models.CharField("ID No.", max_length=15)
@@ -51,18 +51,18 @@ class Alumni(models.Model):
 	w_addrl2 = models.CharField("Work Address Line 2", max_length=200)
 	w_city = models.CharField("Work City", max_length=200)
 	w_region = models.CharField("Work State/Province/Region", max_length=200)
-	w_postcode = models.BigIntegerField(default=0)
+	w_postcode = models.BigIntegerField("Work Postcode",default=0)
 	w_country = models.CharField("Work Country", max_length=200)
 
 	# Previous Work Details
-	p_organisation = models.CharField("Organisation", max_length=200, null=True, blank=True)
-	p_position = models.CharField("Position", max_length=200, null=True, blank=True)
-	p_w_addrl1 = models.CharField("Work Address Line 1", max_length=200, null=True, blank=True)
-	p_w_addrl2 = models.CharField("Work Address Line 2", max_length=200, null=True, blank=True)
-	p_w_city = models.CharField("Work City", max_length=200, null=True, blank=True)
-	p_w_region = models.CharField("Work State/Province/Region", max_length=200, null=True, blank=True)
-	p_w_postcode = models.BigIntegerField(default=0, null=True, blank=True)
-	p_w_country = models.CharField("Work Country", max_length=200, null=True, blank=True)
+	# p_organisation = models.CharField("Organisation", max_length=200, null=True, blank=True)
+	# p_position = models.CharField("Position", max_length=200, null=True, blank=True)
+	# p_w_addrl1 = models.CharField("Work Address Line 1", max_length=200, null=True, blank=True)
+	# p_w_addrl2 = models.CharField("Work Address Line 2", max_length=200, null=True, blank=True)
+	# p_w_city = models.CharField("Work City", max_length=200, null=True, blank=True)
+	# p_w_region = models.CharField("Work State/Province/Region", max_length=200, null=True, blank=True)
+	# p_w_postcode = models.BigIntegerField(default=0, null=True, blank=True)
+	# p_w_country = models.CharField("Work Country", max_length=200, null=True, blank=True)
 
 	class Meta:
 		verbose_name = "Alumni"
