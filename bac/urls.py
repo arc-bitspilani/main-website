@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header = "Alumni Relations Cell BITS Pilani"
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^registrations/', include('registrations.urls', namespace='registrations')),
