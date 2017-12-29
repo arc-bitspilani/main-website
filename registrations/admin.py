@@ -11,6 +11,7 @@ class AlumniAdminSet(admin.ModelAdmin):
 
 	actions_on_top = False
 	actions_on_bottom = True
+	list_filter = ('consul', 'entrep', 'govt', 'acadm', 'research', 'finance', 'info_tech', 'ques1','ques2','ques3','ques4','ques5','ques6')
 
 	fieldsets = [
 		('Personal Details', {'fields':['name', 'phone_no', 'email_id', 'gender', 'addrl1', 'addrl2', 'city', 'state', 'postal_code', 'country']}),
